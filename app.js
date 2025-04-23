@@ -20,7 +20,7 @@ const secretClient = new SecretClient(keyVaultUrl, credential);
 app.get('/', async (req, res) => {
     try {
         // First get the connection string from Key Vault
-        const connectionString = await secretClient.getSecret("AppConfigConnectionString");
+        const connectionString = await secretClient.getSecret("AppConfigConnect");
         
         // Then connect to App Configuration
         const client = new AppConfigurationClient(connectionString.value);
